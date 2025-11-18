@@ -9,5 +9,5 @@ package com.mycompany.controladorsimulador;
  * @author josue
  */
 public class Graficadora {
-    
+
 }
