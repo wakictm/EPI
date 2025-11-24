@@ -2,8 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.controladorsimulador;
+package com.mycompany.controladorsimuladorv1;
 
+/**
+ *
+ * @author waki
+ */
 import java.util.ArrayList;
 
 /**
@@ -12,27 +16,41 @@ import java.util.ArrayList;
  */
 public class ResultadosSimulados {
     
-    private ArrayList<Double> resultados = new ArrayList<>();
+    private static ArrayList<ParametrosSimulados> resultados = new ArrayList<>();
     private double moles;
     private double Kgh2;
     private double volumen;
     private double energiaConsumida;
     private double co2Evitado;
 
-    public ResultadosSimulados(double moles, double Kgh2, double volumen, double energiaConsumida, double co2Evitado) {
-        this.moles = moles;
-        this.Kgh2 = Kgh2;
-        this.volumen = volumen;
-        this.energiaConsumida = energiaConsumida;
-        this.co2Evitado = co2Evitado;
+    public ResultadosSimulados() {
+        
     }
 
-    public void entregarResultado(double corriente, double tiempo, double eficiencia, double temperatura){
+    public static void setResultados(ArrayList<ParametrosSimulados> resultados) {
+        ResultadosSimulados.resultados = resultados;
+    }
+
+    public void agregarResultado(ParametrosSimulados PS){
+        
+        resultados.add(PS);
     
-        double resultado = 0;
+    }
+    
+    public double simularResultados(int indice, double tiempo){
         
-        resultado = (corriente * tiempo * eficiencia * temperatura * 0.082057)/(2);
+        double resultadoMoles = 0;
         
+        resultadoMoles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485);
+        
+        volumen = resultadoMoles * 0.082057 * resultados.get(indice).getTemperatura();
+    
+        return volumen;
+    }
+    
+
+    public ArrayList<ParametrosSimulados> getResultados() {
+        return resultados;
     }
 
     public double getMoles() {
