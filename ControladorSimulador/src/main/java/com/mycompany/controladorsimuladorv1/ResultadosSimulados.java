@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class ResultadosSimulados {
     
-    private ArrayList<Double> resultados = new ArrayList<>();
+    private static ArrayList<ParametrosSimulados> resultados = new ArrayList<>();
     private double moles;
     private double Kgh2;
     private double volumen;
@@ -27,16 +27,30 @@ public class ResultadosSimulados {
         
     }
 
-    public double entregarResultado(ParametrosSimulados PS, double tiempo){
+    public static void setResultados(ArrayList<ParametrosSimulados> resultados) {
+        ResultadosSimulados.resultados = resultados;
+    }
+
+    public void agregarResultado(ParametrosSimulados PS){
+        
+        resultados.add(PS);
     
+    }
+    
+    public double simularResultados(int indice, double tiempo){
+        
         double resultadoMoles = 0;
         
-        resultadoMoles = (PS.getCorriente() * tiempo * PS.getEficienciaFaradica()) / (2 * 96485);
+        resultadoMoles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485 * resultados.get(indice).getPresion());
         
-        volumen = resultadoMoles * 0.082057 * PS.getTemperatura();
-        
+        volumen = resultadoMoles * 0.082057 * resultados.get(indice).getTemperatura();
+    
         return volumen;
-        
+    }
+    
+
+    public ArrayList<ParametrosSimulados> getResultados() {
+        return resultados;
     }
 
     public double getMoles() {

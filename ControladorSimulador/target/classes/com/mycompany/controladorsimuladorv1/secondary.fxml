@@ -1,77 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controladorsimuladorv1.PrimaryController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controladorsimuladorv1.SecondaryController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
             <HBox alignment="CENTER" prefHeight="53.0" prefWidth="730.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#irInicio" prefHeight="124.0" prefWidth="109.0" text="Inicio" />
+                  <Button mnemonicParsing="false" onAction="#irInicio" prefHeight="40.0" prefWidth="109.0" text="Inicio" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
-                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="124.0" prefWidth="109.0" text="Graficadora" />
+                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="40.0" prefWidth="109.0" text="Graficadora" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
-                  <Button mnemonicParsing="false" onAction="#irTablas" prefHeight="124.0" prefWidth="109.0" text="Tablas" />
+                  <Button mnemonicParsing="false" onAction="#irTablas" prefHeight="40.0" prefWidth="109.0" text="Tablas" />
                </children>
             </HBox>
          </top>
          <center>
             <VBox prefHeight="497.0" prefWidth="806.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="890.0">
+                  <HBox alignment="CENTER" prefHeight="77.0" prefWidth="978.0">
                      <children>
-                        <Label text="Parámetros Simulados" />
+                        <VBox alignment="TOP_CENTER" prefHeight="76.0" prefWidth="401.0">
+                           <children>
+                              <Label prefHeight="43.0" prefWidth="158.0" text="Parámetros Simulados">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Electrolisis Alcalina" />
+                                    <Label prefHeight="17.0" prefWidth="62.0" />
+                                    <Button mnemonicParsing="false" text="Electrolisis PEM" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox prefHeight="27.0" prefWidth="892.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="164.0" prefWidth="978.0">
                      <children>
-                        <Label prefHeight="17.0" prefWidth="30.0" />
-                        <Label prefHeight="17.0" prefWidth="57.0" text="Corriente:" />
-                        <Label prefHeight="17.0" prefWidth="75.0" />
-                        <Label text="Voltaje:" />
-                        <Label prefHeight="17.0" prefWidth="83.0" />
-                        <Label text="Tiempo de Electrólisis:" />
-                        <Label prefHeight="17.0" prefWidth="43.0" />
-                        <Label text="Eficiencia Farádica:" />
-                        <Label prefHeight="17.0" prefWidth="41.0" />
-                        <Label text="Temperatura:" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="156.0">
+                                 <children>
+                                    <Label prefWidth="50.0" text="Corriente" />
+                                    <Label />
+                                    <HBox alignment="TOP_CENTER" prefHeight="153.0" prefWidth="100.0">
+                                       <children>
+                                          <Slider fx:id="sliderCorriente" blockIncrement="0.1" max="0.4" min="0.2" orientation="VERTICAL" value="0.4" />
+                                          <VBox prefHeight="119.0" prefWidth="41.0">
+                                             <children>
+                                                <Label text="  0.4 A" />
+                                                <Label prefHeight="96.0" prefWidth="28.0" />
+                                                <Label text="  0.2 A" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="132.0">
+                                 <children>
+                                    <Label text="Voltaje" />
+                                    <Label />
+                                    <HBox alignment="TOP_CENTER" prefHeight="153.0" prefWidth="100.0">
+                                       <children>
+                                          <Slider fx:id="sliderVoltaje" blockIncrement="0.1" max="2.4" min="1.8" orientation="VERTICAL" value="2.4" />
+                                          <VBox prefHeight="119.0" prefWidth="41.0">
+                                             <children>
+                                                <Label text="  2.4 V" />
+                                                <Label prefHeight="96.0" prefWidth="28.0" />
+                                                <Label text="  1.8 V" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="221.0">
+                                 <children>
+                                    <Label text="Tiempo" />
+                                    <Label />
+                                    <TextField fx:id="ingTiempo" prefHeight="32.0" prefWidth="192.0" promptText="Ingrese tiempo(segundos)" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" />
+                        <HBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="168.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Temperatura" />
+                                    <Label />
+                                    <HBox alignment="TOP_CENTER" prefHeight="153.0" prefWidth="100.0">
+                                       <children>
+                                          <Slider fx:id="sliderTemp" max="353.0" min="323.0" orientation="VERTICAL" value="353.0" />
+                                          <VBox prefHeight="119.0" prefWidth="41.0">
+                                             <children>
+                                                <Label text="  353 °K" />
+                                                <Label prefHeight="96.0" prefWidth="28.0" />
+                                                <Label text="  323 °K" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="126.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Presion" />
+                                    <Label />
+                                    <HBox alignment="TOP_CENTER" prefHeight="198.0" prefWidth="100.0">
+                                       <children>
+                                          <Slider fx:id="sliderPresion" blockIncrement="1.0" max="30.0" min="1.0" orientation="VERTICAL" value="1.0" />
+                                          <VBox>
+                                             <children>
+                                                <Label text="  30 atm" />
+                                                <Label prefHeight="96.0" prefWidth="28.0" />
+                                                <Label text="  1 atm" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="131.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Eficiencia Faradica" />
+                                    <Label />
+                                    <HBox alignment="TOP_CENTER" prefHeight="213.0" prefWidth="100.0">
+                                       <children>
+                                          <Slider fx:id="sliderEficiencia" blockIncrement="1.0" min="1.0" orientation="VERTICAL" value="1.0" />
+                                          <VBox>
+                                             <children>
+                                                <Label text="  100%" />
+                                                <Label prefHeight="96.0" prefWidth="28.0" />
+                                                <Label text="  1%" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="890.0">
-                     <children>
-                        <Label prefHeight="17.0" prefWidth="30.0" />
-                        <TextField fx:id="ingCorriente" prefHeight="25.0" prefWidth="102.0" promptText="Ingrese corriente (double)" />
-                        <Label prefHeight="17.0" prefWidth="30.0" />
-                        <TextField fx:id="ingVoltaje" prefHeight="25.0" prefWidth="90.0" promptText="Ingrese voltaje (double)" />
-                        <Label prefHeight="17.0" prefWidth="30.0" />
-                        <TextField fx:id="ingTiempo" prefHeight="25.0" prefWidth="92.0" promptText="Ingrese tiempo (double)" />
-                        <Label prefHeight="17.0" prefWidth="71.0" />
-                        <TextField fx:id="ingEficiencia" prefHeight="25.0" prefWidth="109.0" promptText="Ingrese eficiencia (double)" />
-                        <Label prefHeight="17.0" prefWidth="37.0" />
-                        <TextField fx:id="ingTemperatura" prefHeight="25.0" prefWidth="120.0" promptText="Ingrese temperatura (double)" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="890.0">
+                  <HBox alignment="CENTER" prefHeight="68.0" prefWidth="978.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#graficar" text="Graficar" />
+                        <Label prefHeight="17.0" prefWidth="71.0" />
+                        <Button mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
                      </children>
                   </HBox>
-                  <AreaChart fx:id="produccionH2" prefHeight="394.0" prefWidth="890.0">
+                  <AreaChart fx:id="produccionH2" prefHeight="293.0" prefWidth="978.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <NumberAxis label="Tiempo (s)" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis label="Volumen de H2 (L)" side="LEFT" />
                     </yAxis>
                   </AreaChart>
                </children>
