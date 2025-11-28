@@ -41,9 +41,9 @@ public class ResultadosSimulados {
         
         double resultadoMoles = 0;
         
-        resultadoMoles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485 * resultados.get(indice).getPresion());
+        resultadoMoles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485);
         
-        volumen = resultadoMoles * 0.082057 * resultados.get(indice).getTemperatura();
+        volumen = (resultadoMoles * 0.082057 * resultados.get(indice).getTemperatura())/resultados.get(indice).getPresion();
     
         return volumen;
     }

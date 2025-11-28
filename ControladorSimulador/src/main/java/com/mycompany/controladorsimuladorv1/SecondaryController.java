@@ -11,7 +11,6 @@ package com.mycompany.controladorsimuladorv1;
  */
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
@@ -44,9 +44,20 @@ public class SecondaryController implements Initializable{
     private Slider sliderCorriente;
     @FXML
     private Slider sliderVoltaje;
-    
-    
+    @FXML
+    private Label maxCorriente;
+    @FXML
+    private Label minCorriente;
+    @FXML
+    private Label maxVol;
+    @FXML
+    private Label minVol;
+    @FXML
+    private Label maxTemp;
+    @FXML
+    private Label minTemp;
    
+
     @FXML
     private void irTablas(ActionEvent event) {
     }
@@ -93,7 +104,7 @@ public class SecondaryController implements Initializable{
         double temperatura = sliderTemp.getValue();
         double presion = sliderPresion.getValue();
         
-            System.out.println("Temperatura: "+sliderTemp.getValue());
+        System.out.println("Temperatura: "+ sliderTemp.getValue());
         
         ParametrosSimulados p1 = new ParametrosSimulados(corriente, voltaje, tiempo, eficiencia, temperatura, presion);
         
@@ -150,5 +161,40 @@ public void initialize(URL url, ResourceBundle rb) {
         produccionH2.getData().clear();
         r1.getResultados().clear();
         
+    }
+
+    @FXML
+    private void electrolisisAlcalina(ActionEvent event) {
+        
+        maxVol.setText("  2.4 V");
+        minVol.setText("  1.8 V");
+        maxCorriente.setText("  0.4 A");
+        minCorriente.setText("  0.2 A");
+        maxTemp.setText("  353 °K");
+        minTemp.setText("  333 °K");
+        sliderTemp.setMin(333); sliderTemp.setMax(353);
+        sliderCorriente.setMin(0.2); sliderCorriente.setMax(0.4); 
+        sliderVoltaje.setMin(1.8); sliderVoltaje.setMax(2.4);
+        sliderTemp.setValue(353);
+        sliderVoltaje.setValue(2.4);
+        sliderCorriente.setValue(0.4);
+
+    }
+
+    @FXML
+    private void electrolisisPEM(ActionEvent event) {
+        maxVol.setText("  2.2 V");
+        minVol.setText("  1.4 V");
+        maxCorriente.setText("  2.0 A");
+        minCorriente.setText("  0.5 A");
+        maxTemp.setText("  363 °K");
+        minTemp.setText("  323 °K");
+        sliderTemp.setMin(323); sliderTemp.setMax(363);
+        sliderCorriente.setMin(0.5); sliderCorriente.setMax(2); 
+        sliderVoltaje.setMin(1.4); sliderVoltaje.setMax(2.2);
+        sliderTemp.setValue(363);
+        sliderVoltaje.setValue(2.2);
+        sliderCorriente.setValue(2);
+
     }
 }

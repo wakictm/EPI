@@ -40,9 +40,9 @@
                               </Label>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button mnemonicParsing="false" text="Electrolisis Alcalina" />
+                                    <Button mnemonicParsing="false" onAction="#electrolisisAlcalina" text="Electrolisis Alcalina" />
                                     <Label prefHeight="17.0" prefWidth="62.0" />
-                                    <Button mnemonicParsing="false" text="Electrolisis PEM" />
+                                    <Button mnemonicParsing="false" onAction="#electrolisisPEM" text="Electrolisis PEM" />
                                  </children>
                               </HBox>
                            </children>
@@ -62,9 +62,9 @@
                                           <Slider fx:id="sliderCorriente" blockIncrement="0.1" max="0.4" min="0.2" orientation="VERTICAL" value="0.4" />
                                           <VBox prefHeight="119.0" prefWidth="41.0">
                                              <children>
-                                                <Label text="  0.4 A" />
+                                                <Label fx:id="maxCorriente" text="  0.4 A" />
                                                 <Label prefHeight="96.0" prefWidth="28.0" />
-                                                <Label text="  0.2 A" />
+                                                <Label fx:id="minCorriente" text="  0.2 A" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -84,9 +84,9 @@
                                           <Slider fx:id="sliderVoltaje" blockIncrement="0.1" max="2.4" min="1.8" orientation="VERTICAL" value="2.4" />
                                           <VBox prefHeight="119.0" prefWidth="41.0">
                                              <children>
-                                                <Label text="  2.4 V" />
+                                                <Label fx:id="maxVol" text="  2.4 V" />
                                                 <Label prefHeight="96.0" prefWidth="28.0" />
-                                                <Label text="  1.8 V" />
+                                                <Label fx:id="minVol" text="  1.8 V" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -101,7 +101,7 @@
                                  <children>
                                     <Label text="Tiempo" />
                                     <Label />
-                                    <TextField fx:id="ingTiempo" prefHeight="32.0" prefWidth="192.0" promptText="Ingrese tiempo(segundos)" />
+                                    <TextField fx:id="ingTiempo" prefHeight="32.0" prefWidth="198.0" promptText="Ingrese tiempo(segundos)" />
                                  </children>
                               </VBox>
                            </children>
@@ -115,12 +115,12 @@
                                     <Label />
                                     <HBox alignment="TOP_CENTER" prefHeight="153.0" prefWidth="100.0">
                                        <children>
-                                          <Slider fx:id="sliderTemp" max="353.0" min="323.0" orientation="VERTICAL" value="353.0" />
+                                          <Slider fx:id="sliderTemp" blockIncrement="1.0" max="353.0" min="333.0" orientation="VERTICAL" value="353.0" />
                                           <VBox prefHeight="119.0" prefWidth="41.0">
                                              <children>
-                                                <Label text="  353 °K" />
+                                                <Label fx:id="maxTemp" text="  353 °K" />
                                                 <Label prefHeight="96.0" prefWidth="28.0" />
-                                                <Label text="  323 °K" />
+                                                <Label fx:id="minTemp" text="  333 °K" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -159,7 +159,7 @@
                                     <Label />
                                     <HBox alignment="TOP_CENTER" prefHeight="213.0" prefWidth="100.0">
                                        <children>
-                                          <Slider fx:id="sliderEficiencia" blockIncrement="1.0" min="1.0" orientation="VERTICAL" value="1.0" />
+                                          <Slider fx:id="sliderEficiencia" blockIncrement="1.0" min="1.0" orientation="VERTICAL" value="100.0" />
                                           <VBox>
                                              <children>
                                                 <Label text="  100%" />
@@ -178,7 +178,7 @@
                   <HBox alignment="CENTER" prefHeight="68.0" prefWidth="978.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#graficar" text="Graficar" />
-                        <Label prefHeight="17.0" prefWidth="71.0" />
+                        <Label prefHeight="17.0" prefWidth="90.0" />
                         <Button mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
                      </children>
                   </HBox>
