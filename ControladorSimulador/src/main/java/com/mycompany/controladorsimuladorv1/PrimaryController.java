@@ -8,7 +8,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-
+import com.mycompany.controladorsimuladorv1.SecondaryController;
 
 /**
  * FXML Controller class
@@ -18,7 +18,9 @@ import javafx.fxml.FXML;
 
 public class PrimaryController  {
 
-
+    
+    
+    
     @FXML
     private void irInicio(ActionEvent event) throws IOException {
         

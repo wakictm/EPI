@@ -15,15 +15,25 @@ public class ParametrosSimulados {
     private double tiempoElectrolisis;
     private double eficienciaFaradica;
     private double temperatura;
+    private double presion;
     private double factorCO2;
 
-    public ParametrosSimulados(double corriente, double voltaje, double tiempoElectrolisis, double eficienciaFaradica, double temperatura) {
+    public ParametrosSimulados(double corriente, double voltaje, double tiempoElectrolisis, double eficienciaFaradica, double temperatura, double presion) {
         this.corriente = corriente;
         this.voltaje = voltaje;
         this.tiempoElectrolisis = tiempoElectrolisis;
         this.eficienciaFaradica = eficienciaFaradica;
         this.temperatura = temperatura;
+        this.presion = presion;
        
+    }
+
+    public double getPresion() {
+        return presion;
+    }
+
+    public void setPresion(double presion) {
+        this.presion = presion;
     }
     
     public boolean validarParametros(){
@@ -64,5 +74,7 @@ public class ParametrosSimulados {
      
         
     }
+
+    
     
 }
