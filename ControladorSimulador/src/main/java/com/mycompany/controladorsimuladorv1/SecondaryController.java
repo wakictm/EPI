@@ -101,6 +101,12 @@ public class SecondaryController implements Initializable{
             JOptionPane.showMessageDialog(null, "No podemos retroceder en el tiempo :(.");
             return;
         }
+
+        else if(tiempo>=10000){
+            JOptionPane.showMessageDialog(null, "Lamentablemente no soporta tanto tiempo.");
+            return;
+
+        }
         
         }
         
