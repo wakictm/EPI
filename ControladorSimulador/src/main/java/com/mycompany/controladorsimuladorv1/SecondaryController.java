@@ -102,7 +102,7 @@ public class SecondaryController implements Initializable{
             return;
         }
 
-        else if(tiempo>=10000){
+        else if(tiempo>10000){
             JOptionPane.showMessageDialog(null, "Lamentablemente no soporta tanto tiempo.");
             return;
 
