@@ -101,7 +101,7 @@ public class SecondaryController implements Initializable{
             JOptionPane.showMessageDialog(null, "No podemos retroceder en el tiempo :(.");
             return;
         }
-
+        
         else if(tiempo>10000){
             JOptionPane.showMessageDialog(null, "Lamentablemente no soporta tanto tiempo.");
             return;
@@ -146,23 +146,7 @@ public class SecondaryController implements Initializable{
         
         produccionH2.getData().addAll(datos);
         
-        energiaConsumida.setText(String.valueOf(r1.getEnergiaConsumida())+" KW/h");
-        
-        String eficienciaFinal = String.format("%.2f", r1.getEficienciaEnergetica());
-        
-        eficienciaEnergetica.setText(eficienciaFinal+"%");
-        
-        String molesFinal = String.format("%.2f", r1.getMoles());
-        
-        molesH2.setText(molesFinal +" moles de H₂");
-        
-        String kgFinal = String.format("%.4f", (r1.getKgh2()));
-        
-        kgH2.setText(kgFinal+" KgH₂");
-        
-        String co2Final = String.format("%.4f", (r1.getCo2Evitado()));
-        
-        co2Evitado.setText(String.valueOf(co2Final+" KgCO₂"));
+        resultados();
         
         
         
@@ -274,6 +258,8 @@ public void initialize(URL url, ResourceBundle rb) {
         }
         
         produccionH2.getData().addAll(datos);
+        
+        resultados();
             
             
         }
@@ -309,7 +295,7 @@ public void initialize(URL url, ResourceBundle rb) {
         
         produccionH2.getData().addAll(datos);    
             
-        
+        resultados();
         
         }
         
@@ -351,7 +337,7 @@ public void initialize(URL url, ResourceBundle rb) {
         
         produccionH2.getData().addAll(datos);
             
-            
+        resultados();    
         }
         
         else{
@@ -385,7 +371,7 @@ public void initialize(URL url, ResourceBundle rb) {
         
         produccionH2.getData().addAll(datos);    
             
-        
+        resultados();
         
         }
         
@@ -426,7 +412,8 @@ public void initialize(URL url, ResourceBundle rb) {
         }
         
         produccionH2.getData().addAll(datos);
-            
+        
+        resultados();
             
         }
         
@@ -461,11 +448,40 @@ public void initialize(URL url, ResourceBundle rb) {
         
         produccionH2.getData().addAll(datos);    
             
-        
+        resultados();
         
         }
         
         
         
     }
+    
+    public void resultados(){
+    
+    
+        String energiaConsumidaFinal = String.format("%.2f", r1.getEnergiaConsumida());
+        
+        energiaConsumida.setText(energiaConsumidaFinal +" KW/h");
+        
+        String eficienciaFinal = String.format("%.2f", r1.getEficienciaEnergetica());
+        
+        eficienciaEnergetica.setText(eficienciaFinal+"%");
+        
+        String molesFinal = String.format("%.2f", r1.getMoles());
+        
+        molesH2.setText(molesFinal +" moles de H₂");
+        
+        String kgFinal = String.format("%.4f", (r1.getKgh2()));
+        
+        kgH2.setText(kgFinal+" KgH₂");
+        
+        String co2Final = String.format("%.4f", (r1.getCo2Evitado()));
+        
+        co2Evitado.setText(String.valueOf(co2Final+" KgCO₂"));
+    
+    
+    }
+    
+    
 }
+
