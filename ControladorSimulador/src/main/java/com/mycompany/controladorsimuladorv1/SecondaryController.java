@@ -71,7 +71,9 @@ public class SecondaryController implements Initializable{
    
 
     @FXML
-    private void irTablas(ActionEvent event) {
+    private void irTablas(ActionEvent event) throws IOException {
+        
+        App.setRoot("tertiary");
     }
 
     @FXML
@@ -484,4 +486,3 @@ public void initialize(URL url, ResourceBundle rb) {
     
     
 }
-

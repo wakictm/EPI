@@ -21,14 +21,14 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#irInicio" prefHeight="40.0" prefWidth="109.0" text="Inicio" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
-                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="40.0" prefWidth="109.0" text="Graficadora" />
+                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="40.0" prefWidth="109.0" text="Simulador" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
                   <Button mnemonicParsing="false" onAction="#irTablas" prefHeight="40.0" prefWidth="109.0" text="Tablas" />
                </children>
             </HBox>
          </top>
          <bottom>
-            <VBox prefHeight="749.0" prefWidth="1047.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="753.0" prefWidth="1044.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="85.0" prefWidth="1044.0">
                      <children>
@@ -43,7 +43,7 @@
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#electrolisisAlcalina" text="Electrolisis Alcalina" />
-                                    <Label prefHeight="17.0" prefWidth="62.0" />
+                                    <Label prefHeight="17.0" prefWidth="107.0" />
                                     <Button mnemonicParsing="false" onAction="#electrolisisPEM" text="Electrolisis PEM" />
                                  </children>
                               </HBox>
@@ -55,13 +55,13 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="163.0" prefWidth="168.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="161.0" prefWidth="202.0">
                                  <children>
                                     <Label prefWidth="50.0" text="Corriente" />
                                     <Label />
                                     <HBox alignment="TOP_CENTER" prefHeight="129.0" prefWidth="137.0">
                                        <children>
-                                          <Slider fx:id="sliderCorriente" max="600.0" min="200.0" orientation="VERTICAL" value="600.0" />
+                                          <Slider fx:id="sliderCorriente" max="600.0" min="200.0" orientation="VERTICAL" prefHeight="130.0" prefWidth="5.0" value="600.0" />
                                           <VBox prefHeight="129.0" prefWidth="55.0">
                                              <children>
                                                 <Label fx:id="maxCorriente" prefHeight="17.0" prefWidth="48.0" text="  600 A" />
@@ -75,15 +75,15 @@
                               </VBox>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER" prefHeight="161.0" prefWidth="242.0">
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="132.0">
                                  <children>
-                                    <Label text="Voltaje" />
+                                    <Label prefWidth="50.0" text="Voltaje" />
                                     <Label />
-                                    <HBox alignment="TOP_CENTER" prefHeight="153.0" prefWidth="100.0">
+                                    <HBox alignment="TOP_CENTER" prefHeight="127.0" prefWidth="147.0">
                                        <children>
-                                          <Slider fx:id="sliderVoltaje" blockIncrement="0.1" max="2.4" min="1.8" orientation="VERTICAL" value="2.4" />
+                                          <Slider fx:id="sliderVoltaje" blockIncrement="0.1" max="2.4" min="1.8" orientation="VERTICAL" prefHeight="139.0" prefWidth="0.0" value="2.4" />
                                           <VBox prefHeight="119.0" prefWidth="41.0">
                                              <children>
                                                 <Label fx:id="maxVol" text="  2.4 V" />
@@ -103,7 +103,7 @@
                                  <children>
                                     <Label text="Tiempo" />
                                     <Label />
-                                    <TextField fx:id="ingTiempo" prefHeight="32.0" prefWidth="198.0" promptText="Ingrese tiempo(segundos)" />
+                                    <TextField fx:id="ingTiempo" prefHeight="32.0" prefWidth="164.0" promptText="Ingrese tiempo (segundos)" />
                                  </children>
                               </VBox>
                            </children>
@@ -190,33 +190,33 @@
                         <Button mnemonicParsing="false" onAction="#preAlta" text="Preset-alta" />
                      </children>
                   </HBox>
-                  <AreaChart fx:id="produccionH2" prefHeight="295.0" prefWidth="1044.0">
+                  <AreaChart fx:id="produccionH2" prefHeight="307.0" prefWidth="1044.0">
                     <xAxis>
-                      <NumberAxis label="Tiempo (s)" side="BOTTOM" />
+                      <NumberAxis label="Tiempo (s)" prefHeight="30.0" prefWidth="966.0" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis label="Volumen de H2 (L)" side="LEFT" />
                     </yAxis>
                   </AreaChart>
-                  <Pane prefHeight="151.0" prefWidth="1076.0">
+                  <Pane prefHeight="125.0" prefWidth="1044.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="98.0" layoutY="22.0" prefHeight="64.0" prefWidth="849.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #000000;">
+                        <HBox alignment="CENTER_LEFT" layoutX="102.0" layoutY="22.0" prefHeight="57.0" prefWidth="840.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #000000;">
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="106.0" prefWidth="167.0">
                                  <children>
-                                    <Label text="Moles de H2 producidos: " />
+                                    <Label text="Moles de H₂ producidos: " />
                                     <TextField fx:id="molesH2" editable="false" maxWidth="150.0" prefHeight="25.0" prefWidth="300.0" />
                                  </children>
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="141.0" prefWidth="167.0">
                                  <children>
-                                    <Label text="Kg de H2 producidos" />
+                                    <Label text="Kg de H₂ producidos" />
                                     <TextField fx:id="kgH2" editable="false" maxWidth="150.0" minWidth="10.0" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="141.0" prefWidth="167.0">
                                  <children>
-                                    <Label text="CO2 evitado:" />
+                                    <Label text="CO₂ evitado:" />
                                     <TextField fx:id="co2Evitado" editable="false" maxWidth="150.0" prefHeight="25.0" prefWidth="121.0" />
                                  </children>
                               </VBox>

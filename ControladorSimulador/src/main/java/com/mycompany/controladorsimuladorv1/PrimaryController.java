@@ -29,9 +29,9 @@ public class PrimaryController  {
 
 
     @FXML
-    private void irTablas(ActionEvent event) {
+    private void irTablas(ActionEvent event) throws IOException {
         
-        
+        App.setRoot("tertiary");
     }
 
     @FXML
