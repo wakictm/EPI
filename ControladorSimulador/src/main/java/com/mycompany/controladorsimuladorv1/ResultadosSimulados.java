@@ -16,12 +16,18 @@ import java.util.ArrayList;
  */
 public class ResultadosSimulados {
     
+    
+    
+    
+    
     private static ArrayList<ParametrosSimulados> resultados = new ArrayList<>();
     private double moles;
     private double Kgh2;
     private double volumen;
     private double energiaConsumida;
     private double co2Evitado;
+    private double eficienciaEnergetica;
+    
 
     public ResultadosSimulados() {
         
@@ -39,14 +45,30 @@ public class ResultadosSimulados {
     
     public double simularResultados(int indice, double tiempo){
         
-        double resultadoMoles = 0;
         
-        resultadoMoles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485);
+        moles = (resultados.get(indice).getCorriente() * tiempo * resultados.get(indice).getEficienciaFaradica()) / (2 * 96485);
         
-        volumen = (resultadoMoles * 0.082057 * resultados.get(indice).getTemperatura())/resultados.get(indice).getPresion();
+        volumen = (moles * 0.082057 * resultados.get(indice).getTemperatura())/resultados.get(indice).getPresion();
+        
+        energiaConsumida = (resultados.get(indice).getCorriente()* resultados.get(indice).getVoltaje()*resultados.get(indice).getTiempoElectrolisis())/3600000;
+        
+        Kgh2 = (moles *  0.002016);
+        
+        co2Evitado = Kgh2 * 10;
+        
+        eficienciaEnergetica = ((moles * 241.8)/ (energiaConsumida*3600))*100;
     
         return volumen;
     }
+
+    public double getEficienciaEnergetica() {
+        return eficienciaEnergetica;
+    }
+    
+    
+    
+    
+    
     
 
     public ArrayList<ParametrosSimulados> getResultados() {

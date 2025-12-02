@@ -2,10 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controladorsimuladorv1.PrimaryController">
    <children>
@@ -15,16 +18,62 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#irInicio" prefHeight="40.0" prefWidth="109.0" text="Inicio" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
-                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="40.0" prefWidth="109.0" text="Graficadora" />
+                  <Button mnemonicParsing="false" onAction="#irGraficadora" prefHeight="40.0" prefWidth="109.0" text="Simulador" />
                   <Label prefHeight="17.0" prefWidth="60.0" />
                   <Button mnemonicParsing="false" onAction="#irTablas" prefHeight="40.0" prefWidth="109.0" text="Tablas" />
                </children>
             </HBox>
          </top>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER" />
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="728.0" prefWidth="978.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="524.0" prefWidth="978.0">
+                           <children>
+                              <Label prefHeight="56.0" prefWidth="457.0" text="SIMULACION INTERACTIVA DE HIDROGENO VERDE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Pane maxHeight="229.0" maxWidth="600.0" prefHeight="204.0" prefWidth="600.0" style="-fx-background-color: #F2FFF0; -fx-background-radius: 5; -fx-border-color: #C4C4C4;">
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="14.0" prefHeight="27.0" prefWidth="202.0" text="Electrólisis alcalina:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="53.0" prefHeight="17.0" prefWidth="171.0" text="Temperatura:  333 - 353 °K" />
+                                    <Label layoutX="20.0" layoutY="80.0" prefHeight="17.0" prefWidth="171.0" text="Corriente:  200 - 600 A" />
+                                    <Label layoutX="20.0" layoutY="106.0" prefHeight="17.0" prefWidth="171.0" text="Voltaje:  1,8 - 2,4 V" />
+                                    <TextArea editable="false" layoutX="223.0" layoutY="17.0" prefHeight="178.0" prefWidth="351.0" text="La electrólisis alcalina es una de las tecnologías más utilizadas &#10;debido a su bajo costo y simplicidad de operación.&#10;A diferencia de la electrólisis PEM, este tipo de sistema &#10;puede funcionar de manera continua durante hasta &#10;100.000 horas, ya que opera en un medio alcalino que &#10;reduce el desgaste de sus electrolitos y de las celdas &#10;donde se generan las moléculas de hidrógeno. Esto la &#10;convierte en una opción robusta y duradera para la&#10; producción de H₂ a gran escala." />
+                                 </children>
+                              </Pane>
+                              <Label prefHeight="42.0" prefWidth="156.0" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Pane maxHeight="229.0" maxWidth="600.0" prefHeight="185.0" prefWidth="600.0" style="-fx-background-color: #F2FFF0; -fx-background-radius: 5; -fx-border-color: #C4C4C4;">
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="14.0" prefHeight="27.0" prefWidth="202.0" text="Electrólisis PEM:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="53.0" prefHeight="17.0" prefWidth="171.0" text="Temperatura:  323 - 363 °K" />
+                                    <Label layoutX="20.0" layoutY="80.0" prefHeight="17.0" prefWidth="171.0" text="Corriente:  500 - 3000 A" />
+                                    <Label layoutX="20.0" layoutY="106.0" prefHeight="17.0" prefWidth="171.0" text="Voltaje:  1,4 - 2,2 V" />
+                                    <TextArea editable="false" layoutX="223.0" layoutY="17.0" prefHeight="153.0" prefWidth="350.0" text="En una celda PEM, el agua entra por las placas bipolares y &#10;lega a los electrodos. En el ánodo, el agua se separa: libera &#10;protones (H⁺), oxígeno y electrones. Los protones atraviesan &#10;la membrana hacia el cátodo, mientras los electrones viajan &#10;por el circuito externo. En el cátodo, los protones y &#10;electrones se combinan para formar hidrógeno. &#10;Finalmente, el oxígeno sale por el ánodo y el hidrógeno }&#10;por el cátodo." />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <TextArea editable="false" maxHeight="100.0" maxWidth="600.0" prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: #cfcfcf;" text="Nota: Estas producciones fueron obtenidas en entornos industriales utilizando celdas de 1000 cm², por lo que &#10;los valores mostrados corresponden a producciones altas de hidrógeno, típicas de equipos de gran &#10;capacidad." />
+                     </children>
+                  </VBox>
+               </children></VBox>
          </center>
       </BorderPane>
-      <Label prefHeight="52.0" prefWidth="85.0" text="Inicio" />
    </children>
 </StackPane>

@@ -17,16 +17,28 @@ public class ParametrosSimulados {
     private double temperatura;
     private double presion;
     private double factorCO2;
+    private String nombre;
 
-    public ParametrosSimulados(double corriente, double voltaje, double tiempoElectrolisis, double eficienciaFaradica, double temperatura, double presion) {
+    public ParametrosSimulados(double corriente, double voltaje, double tiempoElectrolisis, double eficienciaFaradica, double temperatura, double presion, String nombre) {
         this.corriente = corriente;
         this.voltaje = voltaje;
         this.tiempoElectrolisis = tiempoElectrolisis;
         this.eficienciaFaradica = eficienciaFaradica;
         this.temperatura = temperatura;
         this.presion = presion;
+        this.nombre = nombre;
        
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
 
     public double getPresion() {
         return presion;
@@ -74,5 +86,7 @@ public class ParametrosSimulados {
      
         
     }
+
+    
     
 }
